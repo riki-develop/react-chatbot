@@ -32,9 +32,19 @@ export default class App extends React.Component {
 
   selectAnswer = (selectedAnswer, nextQuestionId) => {
     switch(true) {
+      // 初期状態
       case(nextQuestionId === 'init'):
         this.displayNextQuestion(nextQuestionId)
         break;
+
+      // nextQuestionIdの中身がURLだった時の処理
+      case(/^https:*/.test(nextQuestionId)):
+        const a = document.createElement('a')
+        a.href = nextQuestionId
+        a.target = '_blank'
+        a.click()
+        break;
+
       default:
         const chats = this.state.chats
         chats.push({
@@ -46,7 +56,8 @@ export default class App extends React.Component {
           chats: chats
         })
 
-        this.displayNextQuestion(nextQuestionId)
+        // 回答をわざと遅延表示（チャットっぽく）
+        setTimeout(() => this.displayNextQuestion(nextQuestionId), 1000)
         break;
     }
   }
@@ -54,6 +65,13 @@ export default class App extends React.Component {
   componentDidMount() {
     this.initAnswer = ""
     this.selectAnswer(this.initAnswer, this.state.currentId)
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    const scrollArea = document.getElementById('scroll-area')
+    if(scrollArea) {
+      scrollArea.scrollTop = scrollArea.scrollHeight
+    }
   }
 
   render() {
