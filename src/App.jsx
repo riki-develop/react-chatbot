@@ -34,7 +34,8 @@ export default class App extends React.Component {
     switch(true) {
       // 初期状態
       case(nextQuestionId === 'init'):
-        this.displayNextQuestion(nextQuestionId)
+        // 回答をわざと遅延表示（チャットっぽく）
+        setTimeout(() => this.displayNextQuestion(nextQuestionId), 1000)
         break;
 
       // nextQuestionIdの中身がURLだった時の処理
