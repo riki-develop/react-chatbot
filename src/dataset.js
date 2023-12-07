@@ -1,18 +1,18 @@
 const defaultDataset = {
     "init": {
         answers: [
-            {content: "仕事を依頼したい", nextId: "job_offer"},
-            {content: "エンジニアのキャリアについて相談したい", nextId: "consultant"},
-            {content: "学習コミュニティについて知りたい", nextId: "community"},
-            {content: "お付き合いしたい", nextId: "dating"},
+            {content: "WEBの仕事を依頼したい", nextId: "job_offer"},
+            {content: "MoreJapanの活動内容について知りたい", nextId: "activity"},
+            {content: "YouTube開設について相談したい", nextId: "youtube"},
+            {content: "ざっくばらんに交流したい", nextId: "frankly"}
         ],
-        question: "こんにちは！🐯トラハックへのご用件はなんでしょうか？",
+        question: "こんにちは！MoreJapanです。ご用件はなんでしょうか？",
     },
     "job_offer": {
         answers: [
             {content: "Webサイトを制作してほしい", nextId: "website"},
             {content: "Webアプリを開発してほしい", nextId: "webapp"},
-            {content: "自動化ツールを作ってほしい", nextId: "automation_tool"},
+            {content: "SEO対策について相談したい", nextId: "seo"},
             {content: "その他", nextId: "other_jobs"}
         ],
         question: "どのようなお仕事でしょうか？",
@@ -22,7 +22,7 @@ const defaultDataset = {
             {content: "問い合わせる", nextId: "contact"},
             {content: "最初の質問に戻る", nextId: "init"}
         ],
-        question: "Webサイト細作についてですね。コチラからお問い合わせできます。",
+        question: "Webサイト制作についてですね。コチラからお問い合わせできます。",
     },
     "webapp": {
         answers: [
@@ -31,12 +31,12 @@ const defaultDataset = {
         ],
         question: "Webアプリ開発についてですね。コチラからお問い合わせできます。",
     },
-    "automation_tool": {
+    "seo": {
         answers: [
             {content: "問い合わせる", nextId: "contact"},
             {content: "最初の質問に戻る", nextId: "init"}
         ],
-        question: "自動化ツール開発についてですね。コチラからお問い合わせできます。",
+        question: "SEO対策についてですね。コチラからお問い合わせできます。",
     },
     "other_jobs": {
         answers: [
@@ -45,36 +45,36 @@ const defaultDataset = {
         ],
         question: "その他についてですね。コチラからお問い合わせできます。",
     },
-    "consultant": {
+    "activity": {
         answers: [
-            {content: "YouTubeで動画を見る", nextId: "https://www.youtube.com/channel/UC-bOAxx-YOsviSmqh8COR0w"},
-            {content: "学習コミュニティについて知りたい", nextId: "community"},
+            {content: "YouTubeを見る", nextId: "https://www.youtube.com/channel/UCNFPNKbyjsFuy0cNGeai2xA"},
+            {content: "Instagramを見る", nextId: "https://www.instagram.com/morejapan_photo/"},
+            {content: "YouTube開設について相談したい", nextId: "youtube"},
             {content: "最初の質問に戻る", nextId: "init"}
         ],
-        question: "トラハックは普段からYouTubeでキャリアについて発信しています。また、僕が運営するエンジニア向け学習コミュニティ内でも相談に乗っていますよ。",
+        question: "MoreJapanはYouTubeやInstagramで旅のお役立ち情報を発信をしています。\n気になるプラットフォームを御覧ください。",
     },
-    "community": {
+    "youtube": {
         answers: [
-            {content: "どんな活動をしているの？", nextId: "community_activity"},
-            {content: "コミュニティに参加したい", nextId: "https://torahack.web.app/community/"},
+            {content: "YouTubeを見る", nextId: "https://www.youtube.com/channel/UCNFPNKbyjsFuy0cNGeai2xA"},
+            {content: "コンサルティングについて詳しく聞きたい", nextId: "youtube_activity"},
             {content: "最初の質問に戻る", nextId: "init"}
         ],
-        question: "2020年3月から学習コミュニティを始めました！🎉Webエンジニアへの転職を目指す人向けに、プログラミングを教えたりキャリアの相談に乗っています。",
+        question: "MoreJapanはチャンネル開設から収益化までのコンサルティングも行っております。",
     },
-    "community_activity": {
+    "youtube_activity": {
         answers: [
-            {content: "さらに詳細を知りたい", nextId: "https://youtu.be/tIzE7hUDbBM"},
-            {content: "コミュニティに参加したい", nextId: "https://torahack.web.app/community/"},
+            {content: "問い合わせる", nextId: "contact"},
             {content: "最初の質問に戻る", nextId: "init"}
         ],
-        question: "フロントエンド向けの教材の提供、キャリアや勉強法に関するメルマガの配信、週1のオンライン作業会などを開催しています！\n詳細はYouTube動画で紹介しています。",
+        question: "チャンネルのコンセプトなど、詳しく教えてください。",
     },
-    "dating": {
+    "frankly": {
         answers: [
-            {content: "DMする", nextId: "https://twitter.com/torahack_"},
+            {content: "DMする", nextId: "https://twitter.com/MoreJapanVideo1"},
             {content: "最初の質問に戻る", nextId: "init"}
         ],
-        question: "まずは一緒にランチでもいかがですか？DMしてください😘",
+        question: "OKです👌DMしてください✨",
     },
 }
 
